@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Rating extends Model
 {
     use HasFactory;
 
@@ -16,8 +16,8 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function ratings()
+    public function post()
     {
-        return $this->hasMany(Rating::class);
+        return $this->belongsTo(Post::class);
     }
 }
