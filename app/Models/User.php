@@ -45,4 +45,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class);
     }
+
+    public function rating()
+    {
+        return $this->hasOne(Rating::class);
+    }
 }
