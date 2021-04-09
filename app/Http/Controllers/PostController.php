@@ -73,6 +73,8 @@ class PostController extends Controller
      */
     public function update(PostRequest $request, Post $post)
     {
+        $this->authorize('update', $post);
+
         $post->update($request->only('title','body'));
         return redirect()->route('dashboard');
     }
@@ -85,6 +87,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        $this->authorize('delete', $post);
+
         $post->delete();
         return redirect()->route('dashboard');
     }
