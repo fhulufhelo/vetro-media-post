@@ -30,7 +30,7 @@
                                             <a href="{{route('post.edit',[$post])}}" class="font-medium text-indigo-600 hover:text-indigo-500">{{$post->title}}</a>
                                         </td>
                                         <td class="px-4 py-4">
-                                            <a href="{{route('post.edit',[$post])}}" class="font-medium text-red-700 hover:text-red-500">Delete</a>
+                                            <livewire:delete-post :post="$post" />
                                         </td>
                                     </tr>
                                 @endforeach

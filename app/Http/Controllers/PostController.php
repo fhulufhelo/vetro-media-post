@@ -79,17 +79,4 @@ class PostController extends Controller
         return redirect()->route('dashboard');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Post $post)
-    {
-        $this->authorize('delete', $post);
-
-        $post->delete();
-        return redirect()->route('dashboard');
-    }
 }
